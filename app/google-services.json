@@ -1,0 +1,59 @@
+{
+  "project_info": {
+    "project_number": "356083522833",
+    "firebase_url": "https://phone-services-find.firebaseio.com",
+    "project_id": "phone-services-find",
+    "storage_bucket": "phone-services-find.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:356083522833:android:739b096ab1f31b9a",
+        "android_client_info": {
+          "package_name": "com.example.android.phonerepairerfind"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "356083522833-62n6g9rp3mu76a73oqf9ec49n1i5s2ue.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.android.phonerepairerfind",
+            "certificate_hash": "5a52d7f9e7336e378f1aaf98b5f65dde4b45648e"
+          }
+        },
+        {
+          "client_id": "356083522833-ga02i235rcf7fffe3lsdmth4djt49k1j.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "356083522833-ga02i235rcf7fffe3lsdmth4djt49k1j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBu8zvSAlMrRnz0dUvqqn8NM2VvtdiWYh4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "356083522833-ga02i235rcf7fffe3lsdmth4djt49k1j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/profile_coordinator_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:fitsSystemWindows="true"
+            android:theme="@style/AppTheme.AppBarOverlay">
+
+            <android.support.design.widget.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/side_nav_bar"
+                app:contentScrim="?attr/colorPrimary"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profile_profile_image_layout"
+                    app:civ_border_width="2dp"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_gravity="center"
+                    android:src="@color/colorLightGray"
+                    app:civ_border_color="@color/colorAccent2"
+                    app:civ_fill_color="@color/colorLightGray"
+                    app:civ_circle_background_color="@color/colorLightGray" />
+
+                <android.support.v7.widget.Toolbar
+                    android:id="@+id/profile_toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    app:layout_collapseMode="pin"
+                    app:popupTheme="@style/AppTheme.PopupOverlay"
+                    app:titleTextColor="@color/white" />
+
+            </android.support.design.widget.CollapsingToolbarLayout>
+        </android.support.design.widget.AppBarLayout>
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorChatBackground"
+            android:paddingBottom="16dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:minHeight="250dp">
+
+                    <ImageButton
+                        android:id="@+id/edit_username_button"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@null"
+                        app:layout_constraintBottom_toTopOf="@+id/profile_username_name_edit"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/profile_username_name_edit"
+                        app:srcCompat="@drawable/ic_edit_icon" />
+
+                    <EditText
+                        android:id="@+id/profile_username_name_edit"
+                        style="@style/TextAppearance.AppCompat.Subhead"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@android:color/transparent"
+                        android:ellipsize="end"
+                        android:focusable="false"
+                        android:inputType="text"
+                        android:padding="4dp"
+                        tools:text="Jasper Essien"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toStartOf="@+id/edit_username_button"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <EditText
+                        android:id="@+id/profile_phone_number"
+                        style="@style/TextAppearance.AppCompat.Body1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@android:color/transparent"
+                        android:drawablePadding="4dp"
+                        android:drawableStart="@drawable/ic_contact_phone_icon"
+                        android:ellipsize="end"
+                        android:focusable="false"
+                        android:gravity="center_vertical"
+                        android:inputType="phone"
+                        android:padding="4dp"
+                        tools:text="09023786758"
+                        app:layout_constraintEnd_toStartOf="@+id/profile_edit_phone_num_button"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/profile_business_name"
+                        app:layout_constraintTop_toBottomOf="@+id/profile_business_name" />
+
+                    <ImageButton
+                        android:id="@+id/profile_edit_phone_num_button"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_marginBottom="8dp"
+                        android:background="@null"
+                        app:layout_constraintBottom_toTopOf="@+id/profile_phone_number"
+                        app:layout_constraintEnd_toEndOf="@+id/profile_edit_business_name"
+                        app:layout_constraintTop_toBottomOf="@+id/profile_phone_number"
+                        app:srcCompat="@drawable/ic_edit_icon" />
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/profile_like_image"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="16dp"
+                        android:src="@drawable/ic_heart_button_12dp"
+                        app:layout_constraintStart_toStartOf="@+id/profile_phone_number"
+                        app:layout_constraintTop_toBottomOf="@+id/profile_location_name" />
+
+                    <EditText
+                        android:id="@+id/profile_website_address"
+                        style="@style/TextAppearance.AppCompat.Body1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@android:color/transparent"
+                        android:drawableLeft="@drawable/ic_edit_icon"
+                        android:drawablePadding="4dp"
+                        android:drawableStart="@drawable/ic_web"
+                        android:ellipsize="end"
+                        android:focusable="true"
+                        android:gravity="center_vertical"
+                        android:padding="4dp"
+                        android:text="www.helloworld.com"
+                        app:layout_constraintEnd_toStartOf="@+id/profile_edit_website_address_button"
+                        app:layout_constraintStart_toStartOf="@+id/profile_phone_number"
+                        app:layout_constraintTop_toBottomOf="@+id/profile_phone_number" />
+
+                    <ImageButton
+                        android:id="@+id/profile_edit_website_address_button"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:background="@null"
+                        app:layout_constraintBottom_toTopOf="@+id/profile_website_address"
+                        app:layout_constraintEnd_toEndOf="@+id/profile_edit_phone_num_button"
+                        app:layout_constraintTop_toBottomOf="@+id/profile_website_address"
+                        app:srcCompat="@drawable/ic_edit_icon" />
+
+                    <TextView
+                        android:id="@+id/profile_likes_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:text="12 like(s)"
+                        app:layout_constraintBottom_toTopOf="@+id/profile_like_image"
+                        app:layout_constraintStart_toEndOf="@+id/profile_like_image"
+                        app:layout_constraintTop_toBottomOf="@+id/profile_like_image" />
+
+                    <RatingBar
+                        android:id="@+id/profile_rating_bar"
+                        style="?android:attr/ratingBarStyleSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:stepSize="0.5"
+                        app:layout_constraintBottom_toTopOf="@+id/profile_likes_count"
+                        app:layout_constraintEnd_toEndOf="@+id/profile_edit_website_address_button"
+                        app:layout_constraintTop_toBottomOf="@+id/profile_likes_count"
+                        tools:rating="2.0" />
+
+                    <TextView
+                        android:id="@+id/profile_location_name"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginTop="8dp"
+                        android:drawablePadding="4dp"
+                        android:drawableStart="@drawable/ic_location"
+                        android:ellipsize="end"
+                        android:gravity="center_vertical"
+                        android:padding="4dp"
+                        android:text="11 Ndia Street, Egblelu"
+                        app:layout_constraintEnd_toStartOf="@+id/profile_edit_location"
+                        app:layout_constraintStart_toStartOf="@+id/profile_website_address"
+                        app:layout_constraintTop_toBottomOf="@+id/profile_website_address" />
+
+                    <ImageButton
+                        android:id="@+id/profile_edit_location"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:background="@null"
+                        app:layout_constraintBottom_toTopOf="@+id/profile_location_name"
+                        app:layout_constraintEnd_toEndOf="@+id/profile_edit_website_address_button"
+                        app:layout_constraintTop_toBottomOf="@+id/profile_location_name"
+                        app:srcCompat="@drawable/ic_edit_location_icon" />
+
+                    <GridLayout
+                        android:id="@+id/profile_availability_gridLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:columnCount="2"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/profile_likes_count">
+
+                        <TextView
+                            android:id="@+id/profile_availability_header"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:text="@string/availability"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/profile_availability_time_header"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:text="@string/availability_time"
+                            android:textStyle="bold" />
+
+                        <CheckBox
+                            android:id="@+id/profile_availability_monday"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/monday" />
+
+                        <TextView
+                            android:id="@+id/profile_availability_monday_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            tools:text="9:00 a.m - 5:00 pm" />
+
+                        <CheckBox
+                            android:id="@+id/profile_availability_tuesday"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/tuesday" />
+
+                        <TextView
+                            android:id="@+id/profile_availability_tuesday_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            tools:text="9:00 a.m - 5:00 pm" />
+
+                        <CheckBox
+                            android:id="@+id/profile_availability_wednesday"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/wednesday" />
+
+                        <TextView
+                            android:id="@+id/profile_availability_wednesday_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            tools:text="9:00 a.m - 5:00 pm" />
+
+                        <CheckBox
+                            android:id="@+id/profile_availability_thursday"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/thursday" />
+
+                        <TextView
+                            android:id="@+id/profile_availability_thursday_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginStart="16dp"
+                            tools:text="9:00 a.m - 5:00 pm" />
+
+                        <CheckBox
+                            android:id="@+id/profile_availability_friday"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/friday" />
+
+                        <TextView
+                            android:id="@+id/profile_availability_friday_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginStart="16dp"
+                            tools:text="9:00 a.m - 5:00 pm" />
+
+                        <CheckBox
+                            android:id="@+id/profile_availability_saturday"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/saturday" />
+
+                        <TextView
+                            android:id="@+id/profile_availability_saturday_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginStart="16dp"
+                            tools:text="Closed" />
+
+                        <CheckBox
+                            android:id="@+id/profile_availability_sunday"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/sunday" />
+
+                        <TextView
+                            android:id="@+id/profile_availability_sunday_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginStart="16dp"
+                            tools:text="Closed" />
+                    </GridLayout>
+
+                    <Button
+                        android:id="@+id/profile_change_password_button"
+                        style="@style/Widget.AppCompat.Button.Small"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="16dp"
+                        android:text="Change Password"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.502"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/profile_availability_gridLayout" />
+
+                    <EditText
+                        android:id="@+id/profile_business_name"
+                        style="?attr/textAppearanceSearchResultSubtitle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@android:color/transparent"
+                        android:ellipsize="end"
+                        android:focusable="false"
+                        android:inputType="text"
+                        android:padding="4dp"
+                        android:text="The best phone "
+                        app:layout_constraintEnd_toStartOf="@+id/profile_edit_business_name"
+                        app:layout_constraintStart_toStartOf="@+id/profile_username_name_edit"
+                        app:layout_constraintTop_toBottomOf="@+id/profile_username_name_edit" />
+
+                    <ImageButton
+                        android:id="@+id/profile_edit_business_name"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@null"
+                        app:layout_constraintBottom_toTopOf="@+id/profile_business_name"
+                        app:layout_constraintEnd_toEndOf="@+id/edit_username_button"
+                        app:layout_constraintTop_toBottomOf="@+id/profile_business_name"
+                        app:srcCompat="@drawable/ic_edit_icon" />
+                </android.support.constraint.ConstraintLayout>
+            </FrameLayout>
+        </android.support.v4.widget.NestedScrollView>
+
+        <include
+            android:id="@+id/cancel_ok_button"
+            layout="@layout/item_cancel_ok_buttons"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginBottom="4dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:visibility="gone" />
+    </android.support.design.widget.CoordinatorLayout>
+</layout>

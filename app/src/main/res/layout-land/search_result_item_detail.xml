@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/app_background">
+
+        <android.support.design.widget.CoordinatorLayout
+            android:id="@+id/search_result_item_detail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <android.support.design.widget.AppBarLayout
+                    android:id="@+id/search_result_detail_app_bar"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.8"
+                    android:fitsSystemWindows="true"
+                    android:theme="@style/AppTheme.AppBarOverlay">
+                    <!--app:contentScrim="?attr/colorPrimary"-->
+                    <android.support.design.widget.CollapsingToolbarLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fitsSystemWindows="true"
+                        app:contentScrim="?attr/colorPrimary"
+                        app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:fitsSystemWindows="true"
+                            app:layout_collapseMode="parallax">
+
+                            <ImageView
+                                android:id="@+id/search_result_image_view"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/colorLightGray"
+                                android:scaleType="centerCrop"
+                                tools:src="@drawable/image_test2" />
+
+                            <android.support.v4.view.ViewPager
+                                android:id="@+id/search_result_images_viewpager"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:visibility="gone">
+
+                            </android.support.v4.view.ViewPager>
+
+                            <View
+                                android:id="@+id/search_result_map_fragment"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:visibility="gone" />
+                            <!--Add a Map View here-->
+                        </FrameLayout>
+
+                        <android.support.v7.widget.Toolbar
+                            android:id="@+id/search_result_toolbar"
+                            android:layout_width="match_parent"
+                            android:layout_height="?attr/actionBarSize"
+                            app:layout_collapseMode="pin"
+                            app:popupTheme="@style/AppTheme.PopupOverlay" />
+                        <!--<FrameLayout-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="250dp">-->
+                        <!--<ImageView-->
+                        <!--android:src="@drawable/image_test2"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="match_parent" />-->
+                        <!--</FrameLayout>-->
+
+                    </android.support.design.widget.CollapsingToolbarLayout>
+                </android.support.design.widget.AppBarLayout>
+
+                <android.support.v4.widget.NestedScrollView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_below="@id/search_result_detail_app_bar"
+                    android:layout_weight="1"
+                    android:background="@color/colorChatBackground"
+                    android:paddingBottom="16dp"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:orientation="vertical"
+                        android:padding="8dp"
+
+                        app:layout_anchor="@id/search_result_detail_app_bar">
+
+
+                        <TextView
+                            android:id="@+id/search_result_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="4dp"
+                            android:text="Ken Saro Wiwa " />
+
+                        <android.support.v7.widget.AppCompatRatingBar
+                            android:id="@+id/search_result_rating_bar"
+                            style="?android:attr/ratingBarStyleSmall"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginStart="4dp"
+                            android:rating="5.0"
+                            android:stepSize="0.5" />
+
+                        <TextView
+                            android:id="@+id/search_result_location"
+                            android:drawableLeft="@drawable/ic_location"
+                            android:drawablePadding="8dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="4dp"
+                            tools:text=" No. 12 Ikemba Street, Egbelu" />
+
+                        <GridLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginStart="4dp"
+                            android:columnCount="2">
+
+                            <TextView
+                                android:id="@+id/search_result_availability_monday"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/monday" />
+
+                            <TextView
+                                android:id="@+id/search_result_availability_monday_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                tools:text="9:00 a.m - 5:00 pm" />
+
+                            <TextView
+                                android:id="@+id/search_result_availability_teusday"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/tuesday" />
+
+                            <TextView
+                                android:id="@+id/search_result_availability_teusday_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                tools:text="9:00 a.m - 5:00 pm" />
+
+                            <TextView
+                                android:id="@+id/search_result_availability_wednesday"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/wednesday" />
+
+                            <TextView
+                                android:id="@+id/search_result_availability_wednesday_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                tools:text="9:00 a.m - 5:00 pm" />
+
+                            <TextView
+                                android:id="@+id/search_result_availability_thursday"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/thursday" />
+
+                            <TextView
+                                android:id="@+id/search_result_availability_thursday_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginStart="16dp"
+                                tools:text="9:00 a.m - 5:00 pm" />
+
+                            <TextView
+                                android:id="@+id/search_result_availability_friday"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/friday" />
+
+                            <TextView
+                                android:id="@+id/search_result_availability_friday_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginStart="16dp"
+                                tools:text="9:00 a.m - 5:00 pm" />
+
+                            <TextView
+                                android:id="@+id/search_result_availability_saturday"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/saturday" />
+
+                            <TextView
+                                android:id="@+id/search_result_availability_saturday_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginStart="16dp"
+                                tools:text="Closed" />
+
+                            <TextView
+                                android:id="@+id/search_result_availability_sunday"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/sunday" />
+
+                            <TextView
+                                android:id="@+id/search_result_availability_sunday_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginStart="16dp"
+                                tools:text="Closed" />
+                        </GridLayout>
+
+                        <!--TODO: Add icons beside these views-->
+                        <TextView
+                            android:id="@+id/search_result_web_site"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableLeft="@drawable/ic_web"
+                            android:drawablePadding="8dp"
+                            android:padding="4dp"
+                            tools:text="https://kenSaro.com.ng" />
+
+                        <TextView
+                            android:id="@+id/search_result_email_address"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableLeft="@drawable/ic_email_icon"
+                            android:drawablePadding="8dp"
+                            android:padding="4dp"
+                            tools:text="hello@kensaro.com.ng" />
+
+                        <TextView
+                            android:id="@+id/search_result_phone_number"
+                            android:drawableLeft="@drawable/ic_contact_phone_icon"
+                            android:drawablePadding="8dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="4dp"
+                            tools:text="09027818788" />
+
+                        <TextView
+                            android:id="@+id/search_result_business_phone_number"
+                            android:drawableLeft="@drawable/ic_contact_phone_icon"
+                            android:drawablePadding="8dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="4dp"
+                            tools:text="09027818788" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:id="@+id/search_result_message_button"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="4dp"
+                                android:layout_weight="1"
+                                android:background="@color/colorAccent"
+                                android:text="Message"
+                                android:textColor="@color/colorAccent2" />
+
+                            <Button
+                                android:id="@+id/search_result_view_map_button"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="4dp"
+                                android:layout_weight="1"
+                                android:background="@color/colorAccent"
+                                android:text="Show Map"
+                                android:textColor="@color/colorAccent2" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </android.support.v4.widget.NestedScrollView>
+
+            </LinearLayout>
+
+        </android.support.design.widget.CoordinatorLayout>
+    </FrameLayout>
+</layout>

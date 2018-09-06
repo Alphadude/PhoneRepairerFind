@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#ab47bc</color>
+    <color name="colorPrimaryTrans">#40ab47bc</color>
+    <color name="colorPrimaryDark">#790e8b</color>
+    <color name="colorAccent">#ff4081</color>
+    <color name="colorAccent2">#ffff00</color>
+    <color name="colorChatBackground">#DDDDDD</color>
+    <color name="colorLightGray">#999999</color>
+    <color name="colorTextLink">#5544FF</color>
+    <color name="white">#FFffffff</color>
+    <color name="colorAppBottomColor">#f3e3f5</color>
+</resources>

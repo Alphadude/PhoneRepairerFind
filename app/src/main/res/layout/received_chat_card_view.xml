@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorChatBackground">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/chat_card_view"
+        android:layout_width="match_parent"
+        android:background="@color/colorChatBackground"
+        android:layout_height="wrap_content"
+        android:paddingBottom="2dp"
+        app:cardElevation="0dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            android:background="@color/colorChatBackground"
+            android:gravity="start|center_vertical"
+            android:orientation="vertical"
+            android:paddingLeft="4dp"
+            android:paddingStart="4dp">
+
+            <include
+                layout="@layout/chat_date_card_view"
+                android:visibility="gone" />
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/chat_detail_date_parent"
+                android:background="@drawable/list_chat_activated_selector"
+                android:orientation="vertical"
+                android:paddingLeft="8dp"
+                android:paddingStart="8dp">
+
+                <TextView
+                    android:id="@+id/chat_text_chat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|left"
+                    android:layout_marginEnd="50dp"
+                    android:layout_marginRight="50dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/received_chat_background"
+                    android:padding="6dp"
+                    android:paddingRight="6dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="#222222"
+                    tools:text="Hey bro, whatsup" />
+
+                <ImageView
+                    android:id="@+id/chat_image_chat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="200dp"
+                    android:layout_gravity="top|left"
+                    android:layout_marginEnd="50dp"
+                    android:layout_marginRight="50dp"
+                    android:background="@color/colorLightGray"
+                    android:scaleType="centerCrop"
+                    android:visibility="gone"
+                    tools:src="@drawable/image_test2" />
+
+                <TextView
+                    android:id="@+id/chat_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:paddingTop="4dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    tools:text="12:00 PM" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+</android.support.design.widget.CoordinatorLayout>

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/repairers_near_you_result_card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="8dp"
+        android:padding="8dp"
+        android:layout_margin="8dp"
+        app:cardElevation="8dp">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/repairer_near_you_result_image"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="8dp"
+                android:scaleType="centerCrop"
+                android:fadingEdge="horizontal"
+                android:background="@color/colorLightGray"
+                android:padding="2dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/app_background" />
+
+            <TextView
+                android:id="@+id/repairer_near_you_result_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:padding="4dp"
+                android:textAllCaps="true"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/repairer_near_you_result_image"
+                app:layout_constraintHorizontal_bias="0.039"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Jombo Phone and laptop repairs" />
+
+            <RatingBar
+                android:id="@+id/repairers_near_you_ratingBar"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                tools:rating="2.0"
+                android:stepSize="0.5"
+                app:layout_constraintStart_toStartOf="@+id/repairer_near_you_result_image"
+                app:layout_constraintTop_toBottomOf="@+id/repairer_near_you_result_image" />
+
+            <TextView
+                android:id="@+id/repairer_near_you_location"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="8dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:padding="4dp"
+                app:layout_constraintEnd_toStartOf="@+id/repairer_near_you_result_image"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/repairer_near_you_result_name"
+                app:layout_constraintTop_toBottomOf="@+id/repairer_near_you_result_name"
+                tools:text="No. 12 Ikemba street, Egbelu" />
+
+            <TextView
+                android:id="@+id/repairer_near_you_availability"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="8dp"
+                android:maxLines="1"
+                android:paddingLeft="4dp"
+                android:paddingStart="4dp"
+                android:text="Available: 24 hours"
+                app:layout_constraintEnd_toEndOf="@+id/repairer_near_you_location"
+                app:layout_constraintStart_toStartOf="@+id/repairer_near_you_location"
+                app:layout_constraintTop_toBottomOf="@+id/repairer_near_you_location"
+                tools:ellipsize="end" />
+
+            <android.support.v7.widget.AppCompatImageButton
+                android:id="@+id/repairer_near_you_like_button"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:background="@null"
+                app:layout_constraintBottom_toTopOf="@+id/repair_near_you_result_comment_button"
+                app:layout_constraintStart_toStartOf="@+id/repairer_near_you_availability"
+                app:layout_constraintTop_toBottomOf="@+id/repair_near_you_result_comment_button"
+                app:srcCompat="@drawable/ic_heart_button" />
+
+            <android.support.v7.widget.AppCompatImageButton
+                android:id="@+id/repair_near_you_result_comment_button"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginStart="8dp"
+                app:layout_constraintBottom_toTopOf="@+id/repairers_near_you_result_mins"
+                app:layout_constraintStart_toEndOf="@+id/repairers_near_you_like_count"
+                app:layout_constraintTop_toBottomOf="@+id/repairers_near_you_result_mins"
+                app:srcCompat="@drawable/ic_chat_icon" />
+
+            <TextView
+                android:id="@+id/repairers_near_you_result_mins"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="4dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="33 mins"
+                android:textColor="@color/colorPrimary"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/repairers_near_you_ratingBar" />
+
+            <TextView
+                android:id="@+id/repairers_near_you_like_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:maxLines="1"
+                android:text="12 likes"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/repairer_near_you_like_button"
+                app:layout_constraintStart_toEndOf="@+id/repairer_near_you_like_button"
+                app:layout_constraintTop_toBottomOf="@+id/repairer_near_you_like_button" />
+
+            <TextView
+                android:id="@+id/repairers_near_you_comment_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:maxLines="1"
+                android:text="23 comments"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/repair_near_you_result_comment_button"
+                app:layout_constraintStart_toEndOf="@+id/repair_near_you_result_comment_button"
+                app:layout_constraintTop_toBottomOf="@+id/repair_near_you_result_comment_button" />
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v7.widget.CardView>
+
+</FrameLayout>

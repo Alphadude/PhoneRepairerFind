@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/app_background"
+    android:fitsSystemWindows="true"
+    tools:context=".Activities.SignInActivity">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="64dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="64dp"
+        android:padding="16dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <android.support.design.widget.CoordinatorLayout
+            android:id="@+id/signIn_coordinatorLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="8dp">
+
+            <android.support.v4.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/signin_form_linear_layout">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/signin_name_textinput_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <EditText
+                        android:id="@+id/signin_name_edittext"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Name/Email"
+                        android:inputType="text|textEmailAddress"
+                        android:maxLines="1" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/signin_password_textinput_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <EditText
+                        android:id="@+id/signin_password_edittext"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Password"
+                        android:inputType="textPassword"
+                        android:maxLines="1" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/signin_signup_link"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:padding="4dp"
+                    android:text="@string/click_to_signup"
+                    android:textColor="@color/colorTextLink" />
+
+            </LinearLayout>
+            </android.support.v4.widget.NestedScrollView>
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/signin_with_facebook_fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="195dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="@dimen/fab_margin"
+                android:src="@drawable/ic_facebook_icon"
+                app:srcCompat="@drawable/ic_facebook_icon"
+                android:visibility="invisible"
+                app:backgroundTint="@color/colorChatBackground"
+                app:elevation="6dp"
+                app:fabSize="normal"
+                app:layout_anchor="@id/signin_form_linear_layout"
+                app:layout_anchorGravity="right|bottom"
+                app:pressedTranslationZ="12dp" />
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/signin_with_google_fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="130dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="@dimen/fab_margin"
+                android:src="@drawable/ic_google_icon"
+                android:visibility="invisible"
+                app:backgroundTint="@color/colorChatBackground"
+                app:elevation="6dp"
+                app:fabSize="normal"
+                app:layout_anchor="@id/signin_form_linear_layout"
+                app:layout_anchorGravity="bottom|right"
+                app:pressedTranslationZ="12dp" />
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/signin_with_email_pasword_fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="65dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="@dimen/fab_margin"
+                android:src="@drawable/ic_login_icon"
+                android:visibility="invisible"
+                app:fabSize="normal"
+                app:layout_anchor="@id/signin_form_linear_layout"
+                app:layout_anchorGravity="bottom|right"
+                app:pressedTranslationZ="12dp" />
+
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/signin_more_fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/ic_add_more_vector"
+                app:fabSize="normal"
+                app:layout_anchor="@id/signin_form_linear_layout"
+                app:layout_anchorGravity="bottom|right"
+                app:pressedTranslationZ="12dp" />
+
+            <ImageView
+                android:id="@+id/custom_progress_bar_icon"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_loading_progress_setting_"
+                android:visibility="gone" />
+
+        </android.support.design.widget.CoordinatorLayout>
+    </android.support.v7.widget.CardView>
+
+</android.support.constraint.ConstraintLayout>

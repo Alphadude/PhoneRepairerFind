@@ -1,0 +1,597 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+<android.support.constraint.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/app_background"
+    android:fitsSystemWindows="true">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="64dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="64dp"
+        android:padding="16dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <android.support.design.widget.CoordinatorLayout
+            android:id="@+id/signUp_coordinatorLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="8dp">
+
+            <android.support.v4.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fitsSystemWindows="true"
+                android:id="@+id/signup_form_linear_layout"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/signup_profile_pics"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_centerInParent="true"
+                        android:layout_gravity="center_horizontal"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/image_test2"
+                        app:civ_border_color="@color/colorPrimary"
+                        app:civ_border_width="2dp"
+                        app:civ_circle_background_color="@color/colorLightGray" />
+
+                    <ImageButton
+                        android:id="@+id/signup_image_picker_button"
+                        android:layout_below="@id/signup_profile_pics"
+                        android:layout_marginLeft="-20dp"
+                        android:layout_toRightOf="@id/signup_profile_pics"
+                        android:layout_marginTop="-10dp"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:foregroundGravity="center"
+                        android:background="@drawable/circle_background36dp"
+                        android:src="@drawable/ic_add_a_photo"/>
+
+                </RelativeLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/signup_name_textinput_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="4dp">
+
+                    <EditText
+                        android:id="@+id/signup_name_edittext"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Name of shop"
+                        android:inputType="text|textEmailAddress"
+                        android:maxLines="1" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/signup_username_textinput_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="4dp">
+
+                    <EditText
+                        android:id="@+id/signup_username_edittext"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Username"
+                        android:inputType="text"
+                        android:maxLines="1" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/signup_password_textinput_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="4dp">
+
+                    <EditText
+                        android:id="@+id/signup_password_edittext"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Password"
+                        android:inputType="textPassword"
+                        android:maxLines="1" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/signup_confirm_password_textinput_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="4dp">
+
+                    <EditText
+                        android:id="@+id/signup_confirm_password_edittext"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Confirm Password"
+                        android:inputType="textPassword"
+                        android:maxLines="1" />
+
+                </android.support.design.widget.TextInputLayout>
+
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/signup_email_textinput_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="4dp">
+
+                    <EditText
+                        android:id="@+id/signup_email_edittext"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Email"
+                        android:inputType="textEmailAddress"
+                        android:maxLines="1" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <!--<android.support.design.widget.TextInputLayout-->
+                    <!--android:id="@+id/signup_availability_textinput_layout"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:padding="4dp">-->
+
+                    <!--&lt;!&ndash;<EditText&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:id="@+id/signup_availability_edittext"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:hint="Availability"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:inputType="text"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:maxLines="1" />&ndash;&gt;-->
+
+                <!--&lt;!&ndash;</android.support.design.widget.TextInputLayout>&ndash;&gt;-->
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/signup_phoneNum_textinput_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="4dp">
+
+                    <EditText
+                        android:id="@+id/signup_phoneNum_edittext"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="phone number"
+                        android:inputType="phone"
+                        android:maxLines="1" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/signup_businesss_phoneNum_textinput_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="4dp">
+
+                    <EditText
+                        android:id="@+id/signup_businesss_phoneNum_edittext"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="business phone number"
+                        android:inputType="phone"
+                        android:maxLines="1" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/signup_businesss_website_textinput_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="4dp">
+
+                    <EditText
+                        android:id="@+id/signup_businesss_website_edittext"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="company website"
+                        android:inputType="textWebEditText"
+                        android:maxLines="1" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <LinearLayout
+                    android:padding="4dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/availability"/>
+                    <RadioButton
+                        android:id="@+id/signup_monday"
+                        android:text="@string/monday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <CheckBox
+                        android:id="@+id/signup_tuesday"
+                        android:text="@string/tuesday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <CheckBox
+                        android:id="@+id/signup_wednesday"
+                        android:text="@string/wednesday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <CheckBox
+                        android:id="@+id/signup_thursday"
+                        android:text="@string/thursday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+
+                    <CheckBox
+                        android:id="@+id/signup_friday"
+                        android:text="@string/friday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <CheckBox
+                        android:id="@+id/signup_saturday"
+                        android:text="@string/saturday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <CheckBox
+                        android:id="@+id/signup_sunday"
+                        android:text="@string/sunday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <!--<LinearLayout-->
+                        <!--android:layout_marginLeft="6dp"-->
+                        <!--android:layout_marginStart="6dp"-->
+                        <!--android:orientation="horizontal"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content">-->
+
+                        <!--&lt;!&ndash;<CheckBox&ndash;&gt;-->
+                            <!--&lt;!&ndash;android:id="@+id/signup_monday"&ndash;&gt;-->
+                            <!--&lt;!&ndash;android:text="@string/monday"&ndash;&gt;-->
+                            <!--&lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;-->
+                            <!--&lt;!&ndash;android:layout_height="wrap_content" />&ndash;&gt;-->
+                        <!--<LinearLayout-->
+                            <!--android:gravity="end|right"-->
+                            <!--android:orientation="horizontal"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content">-->
+                            <!--<android.support.v7.widget.AppCompatImageButton-->
+                                <!--app:srcCompat="@drawable/ic_end_time"-->
+                                <!--android:id="@+id/signup_monday_start_time_button"-->
+                                <!--style="@style/StartTimeImageButtonStyle"-->
+                                <!--android:elevation="4dp"/>-->
+
+                            <!--<android.support.v7.widget.AppCompatImageButton-->
+                                <!--app:srcCompat="@drawable/ic_end_time"-->
+                                <!--android:id="@+id/signup_monday_end_time_button"-->
+                                <!--android:elevation="4dp"-->
+                                <!--style="@style/EndTimeImageButtonStyle" />-->
+
+                        <!--</LinearLayout>-->
+                    <!--</LinearLayout>-->
+
+                    <!--<LinearLayout-->
+                        <!--android:layout_marginLeft="6dp"-->
+                        <!--android:layout_marginStart="6dp"-->
+                        <!--android:orientation="horizontal"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content">-->
+
+                        <!--&lt;!&ndash;<CheckBox&ndash;&gt;-->
+                            <!--&lt;!&ndash;android:id="@+id/signup_tuesday"&ndash;&gt;-->
+                            <!--&lt;!&ndash;android:text="@string/tuesday"&ndash;&gt;-->
+                            <!--&lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;-->
+                            <!--&lt;!&ndash;android:layout_height="wrap_content" />&ndash;&gt;-->
+                        <!--<LinearLayout-->
+                            <!--android:gravity="end|right"-->
+                            <!--android:orientation="horizontal"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content">-->
+                            <!--<android.support.v7.widget.AppCompatImageButton-->
+                                <!--app:srcCompat="@drawable/ic_end_time"-->
+                                <!--android:id="@+id/signup_tuesday_start_time_button"-->
+                                <!--style="@style/StartTimeImageButtonStyle"-->
+                                <!--android:elevation="4dp"/>-->
+
+                            <!--<android.support.v7.widget.AppCompatImageButton-->
+                                <!--app:srcCompat="@drawable/ic_end_time"-->
+                                <!--android:id="@+id/signup_tuesday_end_time_button"-->
+                                <!--android:elevation="4dp"-->
+                                <!--style="@style/EndTimeImageButtonStyle" />-->
+
+                        <!--</LinearLayout>-->
+                    <!--</LinearLayout>-->
+
+                    <!--<LinearLayout-->
+                        <!--android:layout_marginLeft="6dp"-->
+                        <!--android:layout_marginStart="6dp"-->
+                        <!--android:orientation="horizontal"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content">-->
+
+                        <!--&lt;!&ndash;<CheckBox&ndash;&gt;-->
+                            <!--&lt;!&ndash;android:id="@+id/signup_wednesday"&ndash;&gt;-->
+                            <!--&lt;!&ndash;android:text="@string/wednesday"&ndash;&gt;-->
+                            <!--&lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;-->
+                            <!--&lt;!&ndash;android:layout_height="wrap_content" />&ndash;&gt;-->
+                        <!--<LinearLayout-->
+                            <!--android:gravity="end|right"-->
+                            <!--android:orientation="horizontal"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content">-->
+                            <!--<android.support.v7.widget.AppCompatImageButton-->
+                                <!--app:srcCompat="@drawable/ic_end_time"-->
+                                <!--android:id="@+id/signup_wednesday_start_time_button"-->
+                                <!--style="@style/StartTimeImageButtonStyle"-->
+                                <!--android:elevation="4dp"/>-->
+
+                            <!--<android.support.v7.widget.AppCompatImageButton-->
+                                <!--app:srcCompat="@drawable/ic_end_time"-->
+                                <!--android:id="@+id/signup_wednesday_end_time_button"-->
+                                <!--android:elevation="4dp"-->
+                                <!--style="@style/EndTimeImageButtonStyle" />-->
+
+                        <!--</LinearLayout>-->
+                    <!--</LinearLayout>-->
+
+                    <!--<LinearLayout-->
+                        <!--android:layout_marginLeft="6dp"-->
+                        <!--android:layout_marginStart="6dp"-->
+                        <!--android:orientation="horizontal"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content">-->
+
+                        <!--&lt;!&ndash;<CheckBox&ndash;&gt;-->
+                            <!--&lt;!&ndash;android:id="@+id/signup_thursday"&ndash;&gt;-->
+                            <!--&lt;!&ndash;android:text="@string/thursday"&ndash;&gt;-->
+                            <!--&lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;-->
+                            <!--&lt;!&ndash;android:layout_height="wrap_content" />&ndash;&gt;-->
+                        <!--<LinearLayout-->
+                            <!--android:gravity="end|right"-->
+                            <!--android:orientation="horizontal"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content">-->
+                            <!--<android.support.v7.widget.AppCompatImageButton-->
+                                <!--app:srcCompat="@drawable/ic_end_time"-->
+                                <!--android:id="@+id/signup_thursday_start_time_button"-->
+                                <!--style="@style/StartTimeImageButtonStyle"-->
+                                <!--android:elevation="4dp"/>-->
+
+                            <!--<android.support.v7.widget.AppCompatImageButton-->
+                                <!--app:srcCompat="@drawable/ic_end_time"-->
+                                <!--android:id="@+id/signup_thursday_end_time_button"-->
+                                <!--android:elevation="4dp"-->
+                                <!--style="@style/EndTimeImageButtonStyle" />-->
+
+                        <!--</LinearLayout>-->
+                    <!--</LinearLayout>-->
+
+                    <!--<LinearLayout-->
+                        <!--android:layout_marginLeft="6dp"-->
+                        <!--android:layout_marginStart="6dp"-->
+                        <!--android:orientation="horizontal"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content">-->
+
+                        <!--&lt;!&ndash;<CheckBox&ndash;&gt;-->
+                            <!--&lt;!&ndash;android:id="@+id/signup_friday"&ndash;&gt;-->
+                            <!--&lt;!&ndash;android:text="@string/friday"&ndash;&gt;-->
+                            <!--&lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;-->
+                            <!--&lt;!&ndash;android:layout_height="wrap_content" />&ndash;&gt;-->
+                        <!--<LinearLayout-->
+                            <!--android:gravity="end|right"-->
+                            <!--android:orientation="horizontal"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content">-->
+                            <!--<android.support.v7.widget.AppCompatImageButton-->
+                                <!--app:srcCompat="@drawable/ic_end_time"-->
+                                <!--android:id="@+id/signup_friday_start_time_button"-->
+                                <!--style="@style/StartTimeImageButtonStyle"-->
+                                <!--android:elevation="4dp"/>-->
+
+                            <!--<android.support.v7.widget.AppCompatImageButton-->
+                                <!--app:srcCompat="@drawable/ic_end_time"-->
+                                <!--android:id="@+id/signup_friday_end_time_button"-->
+                                <!--android:elevation="4dp"-->
+                                <!--style="@style/EndTimeImageButtonStyle" />-->
+
+                        <!--</LinearLayout>-->
+                    <!--</LinearLayout>-->
+
+                    <!--<LinearLayout-->
+                        <!--android:layout_marginLeft="6dp"-->
+                        <!--android:layout_marginStart="6dp"-->
+                        <!--android:orientation="horizontal"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content">-->
+
+                        <!--<CheckBox-->
+                            <!--android:id="@+id/signup_saturday"-->
+                            <!--android:text="@string/saturday"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content" />-->
+                        <!--<LinearLayout-->
+                            <!--android:gravity="end|right"-->
+                            <!--android:orientation="horizontal"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content">-->
+                            <!--<android.support.v7.widget.AppCompatImageButton-->
+                                <!--app:srcCompat="@drawable/ic_end_time"-->
+                                <!--android:id="@+id/signup_saturday_start_time_button"-->
+                                <!--style="@style/StartTimeImageButtonStyle"-->
+                                <!--android:elevation="4dp"/>-->
+
+                            <!--<android.support.v7.widget.AppCompatImageButton-->
+                                <!--app:srcCompat="@drawable/ic_end_time"-->
+                                <!--android:id="@+id/signup_saturday_end_time_button"-->
+                                <!--android:elevation="4dp"-->
+                                <!--style="@style/EndTimeImageButtonStyle" />-->
+
+                        <!--</LinearLayout>-->
+                    <!--</LinearLayout>-->
+
+                    <!--<LinearLayout-->
+                        <!--android:layout_marginLeft="6dp"-->
+                        <!--android:layout_marginStart="6dp"-->
+                        <!--android:orientation="horizontal"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content">-->
+
+                        <!--&lt;!&ndash;<CheckBox&ndash;&gt;-->
+                            <!--&lt;!&ndash;android:id="@+id/signup_sunday"&ndash;&gt;-->
+                            <!--&lt;!&ndash;android:text="@string/sunday"&ndash;&gt;-->
+                            <!--&lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;-->
+                            <!--&lt;!&ndash;android:layout_height="wrap_content" />&ndash;&gt;-->
+                        <!--<LinearLayout-->
+                            <!--android:gravity="end|right"-->
+                            <!--android:orientation="horizontal"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content">-->
+                            <!--<android.support.v7.widget.AppCompatImageButton-->
+                                <!--app:srcCompat="@drawable/ic_end_time"-->
+                                <!--android:id="@+id/signup_sunday_start_time_button"-->
+                                <!--style="@style/StartTimeImageButtonStyle"-->
+                                <!--android:elevation="4dp"/>-->
+
+                            <!--<android.support.v7.widget.AppCompatImageButton-->
+                                <!--app:srcCompat="@drawable/ic_end_time"-->
+                                <!--android:id="@+id/signup_sunday_end_time_button"-->
+                                <!--android:elevation="4dp"-->
+                                <!--style="@style/EndTimeImageButtonStyle" />-->
+
+                        <!--</LinearLayout>-->
+                    <!--</LinearLayout>-->
+                </LinearLayout>
+
+                <Button
+                    android:layout_gravity="center_horizontal"
+                    android:id="@+id/signup_location_button"
+                    android:layout_width="wrap_content"
+                    android:background="@color/colorPrimary"
+                    android:textColor="@color/white"
+                    android:layout_marginBottom="8dp"
+                    android:layout_height="wrap_content"
+                    android:padding="6dp"
+                    android:text="LOCATION"/>
+
+            </LinearLayout>
+            </android.support.v4.widget.NestedScrollView>
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/signup_with_facebook_fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="195dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="@dimen/fab_margin"
+                android:src="@drawable/ic_facebook_icon"
+                app:srcCompat="@drawable/ic_facebook_icon"
+                android:visibility="invisible"
+                app:backgroundTint="@color/colorChatBackground"
+                app:elevation="6dp"
+                app:fabSize="normal"
+                app:layout_anchor="@id/signup_form_linear_layout"
+                app:layout_anchorGravity="right|bottom"
+                app:pressedTranslationZ="12dp" />
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/signup_with_google_fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="130dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="@dimen/fab_margin"
+                android:src="@drawable/ic_google_icon"
+                android:visibility="invisible"
+                app:backgroundTint="@color/colorChatBackground"
+                app:elevation="6dp"
+                app:fabSize="normal"
+                app:layout_anchor="@id/signup_form_linear_layout"
+                app:layout_anchorGravity="bottom|right"
+                app:pressedTranslationZ="12dp" />
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/signup_with_email_pasword_fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="65dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="@dimen/fab_margin"
+                android:src="@drawable/ic_login_icon"
+                android:visibility="invisible"
+                app:fabSize="normal"
+                app:layout_anchor="@id/signup_form_linear_layout"
+                app:layout_anchorGravity="bottom|right"
+                app:pressedTranslationZ="12dp" />
+
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/signup_more_fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/ic_add_more_vector"
+                app:fabSize="normal"
+                app:layout_anchor="@id/signup_form_linear_layout"
+                app:layout_anchorGravity="bottom|right"
+                app:pressedTranslationZ="12dp" />
+            <!--<android.support.design.widget.FloatingActionButton-->
+                <!--android:id="@+id/signup_fab"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_alignParentBottom="true"-->
+                <!--android:layout_alignParentEnd="true"-->
+                <!--android:layout_alignParentRight="true"-->
+                <!--android:layout_marginBottom="32dp"-->
+                <!--android:layout_marginEnd="16dp"-->
+                <!--android:layout_marginStart="16dp"-->
+                <!--android:src="@drawable/ic_login_icon"-->
+                <!--app:fabSize="normal" />-->
+
+            <ImageView
+                android:id="@+id/custom_progress_bar_icon"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:visibility="gone"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_loading_progress_setting_"
+                android:layout_gravity="center"/>
+
+        </android.support.design.widget.CoordinatorLayout>
+
+    </android.support.v7.widget.CardView>
+
+</android.support.constraint.ConstraintLayout>
+</layout>
